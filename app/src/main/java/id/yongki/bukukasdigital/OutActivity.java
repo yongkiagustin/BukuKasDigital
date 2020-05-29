@@ -1,12 +1,17 @@
 package id.yongki.bukukasdigital;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -15,24 +20,30 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import static id.yongki.bukukasdigital.MyApp.db;
 
 public class OutActivity extends AppCompatActivity {
+
+
     private DatePickerDialog.OnDateSetListener mOnDateSetListener;
     private EditText etName, etTotal, etDate, etDesc;
     private ImageView setDate;
     private Button btSimpan;
     private PengeluaranDB pengeluaran;
-    String pDate = "";
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_out);
+
+
 
         //inialisasi view
         etDate = findViewById(R.id.out_et_tanggal);
@@ -65,8 +76,7 @@ public class OutActivity extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 String sDate = dayOfMonth + "/" + month + "/" + year;
                 etDate.setText(sDate);
-                pDate = sDate;
-                //setting et_tanggal
+
 
             }
         };
@@ -90,15 +100,20 @@ public class OutActivity extends AppCompatActivity {
         if (!name.isEmpty() && !total.isEmpty() && !date.isEmpty()) {
             pengeluaran = new PengeluaranDB();
             pengeluaran.setNama(name);
-            //pengeluaran.setTanggal(date);
+            pengeluaran.setTanggal(date);
             pengeluaran.setJumlah(total);
             pengeluaran.setDeskripsi(desc);
 
             db.CatPengeluaranDao().insertAll(pengeluaran);
+
+            Intent intent = new Intent(OutActivity.this, DetailsActivity.class);
+            startActivity(intent);
+
 
         } else {
             Toast.makeText(this, "Data belum diisi semua!", Toast.LENGTH_SHORT).show();
 
         }
     }
+
 }
