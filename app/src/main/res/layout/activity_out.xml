@@ -70,6 +70,7 @@
                 android:layout_marginRight="4dp"
                 android:hint="Tanggal"
                 android:inputType="none"
+                android:enabled="false"
                 android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 

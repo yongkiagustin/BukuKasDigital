@@ -26,7 +26,7 @@ public class OutActivity extends AppCompatActivity {
     private ImageView setDate;
     private Button btSimpan;
     private PengeluaranDB pengeluaran;
-    String pDate ="";
+    String pDate = "";
 
 
     @Override
@@ -35,16 +35,15 @@ public class OutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_out);
 
         //inialisasi view
-        etDate = (EditText) findViewById(R.id.et_tanggal);
-        setDate = (ImageView) findViewById(R.id.out_iv_tanggal);
-        etName = (EditText) findViewById(R.id.out_et_nama);
-        etTotal = (EditText) findViewById(R.id.out_et_jumlah);
-        etDesc = (EditText) findViewById(R.id.out_et_deskripsi);
-        btSimpan = (Button) findViewById(R.id.out_bt_simpan);
+        etDate = findViewById(R.id.out_et_tanggal);
+        setDate = findViewById(R.id.out_iv_tanggal);
+        etName = findViewById(R.id.out_et_nama);
+        etTotal = findViewById(R.id.out_et_jumlah);
+        etDesc =  findViewById(R.id.out_et_deskripsi);
+        btSimpan = findViewById(R.id.out_bt_simpan);
 
 
-
-        //menampilkan tanggal saat klik iv_tanggal
+        //menampilkan tanggal saat klik out_iv_tanggal
         setDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,11 +63,11 @@ public class OutActivity extends AppCompatActivity {
         mOnDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                etDate.setText(dayOfMonth + "/" + month + "/" + year);
-                pDate = dayOfMonth + "/" + month + "/" + year;
+                String sDate = dayOfMonth + "/" + month + "/" + year;
+                etDate.setText(sDate);
+                pDate = sDate;
                 //setting et_tanggal
-                etDate.setEnabled(false);
-                etDate.setInputType(InputType.TYPE_NULL);
+
             }
         };
 
@@ -80,24 +79,25 @@ public class OutActivity extends AppCompatActivity {
             }
         });
     }
-    void buttonSimpan(){
+
+    void buttonSimpan() {
         String name = etName.getText().toString();
         String total = etTotal.getText().toString();
         String date = etDate.getText().toString();
         String desc = etDesc.getText().toString();
 
 
-        if(!name.isEmpty() && !total.isEmpty()&& !date.isEmpty()){
+        if (!name.isEmpty() && !total.isEmpty() && !date.isEmpty()) {
             pengeluaran = new PengeluaranDB();
             pengeluaran.setNama(name);
-            pengeluaran.setTanggal(date);
+            //pengeluaran.setTanggal(date);
             pengeluaran.setJumlah(total);
             pengeluaran.setDeskripsi(desc);
 
             db.CatPengeluaranDao().insertAll(pengeluaran);
 
-        }else {
-            Toast.makeText(this,"Data belum diisi semua!",Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Data belum diisi semua!", Toast.LENGTH_SHORT).show();
 
         }
     }
