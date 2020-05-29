@@ -1,4 +1,4 @@
-package id.yongki.bukukasdigital;
+package id.yongki.bukukasdigital.pengeluaran;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +11,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import static id.yongki.bukukasdigital.MyApp.db;
+import id.yongki.bukukasdigital.AppDatabase;
+import id.yongki.bukukasdigital.R;
 
 public class DetailsActivity extends AppCompatActivity {
     RecyclerAdapter recycleAdapter;

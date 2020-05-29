@@ -1,8 +1,7 @@
-package id.yongki.bukukasdigital;
+package id.yongki.bukukasdigital.pemasukan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -14,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import java.util.Calendar;
+
+import id.yongki.bukukasdigital.R;
 
 public class InActivity extends AppCompatActivity {
     private DatePickerDialog.OnDateSetListener mOnDateSetListener;

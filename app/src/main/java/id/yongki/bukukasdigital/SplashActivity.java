@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import id.yongki.bukukasdigital.pengeluaran.OutActivity;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -17,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
 
                 //setelah loading maka akan langsung berpindah ke home activity
-                Intent intent=new Intent(SplashActivity.this, OutActivity.class);
+                Intent intent=new Intent(SplashActivity.this, HomeAcitvity.class);
                 startActivity(intent);
                 finish();
 

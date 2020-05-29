@@ -1,4 +1,4 @@
-package id.yongki.bukukasdigital;
+package id.yongki.bukukasdigital.pengeluaran;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import id.yongki.bukukasdigital.R;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
 
@@ -39,6 +41,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
+        //TODO CHART PAKAI INI
         final PengeluaranDB album = pengeluaranList.get(position);
         holder.nama.setText(album.getNama());
         holder.jumlah.setText(album.getJumlah());

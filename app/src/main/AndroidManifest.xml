@@ -13,10 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".pengeluaran.DetailsActivity"></activity>
         <activity android:name=".HomeAcitvity" />
-        <activity android:name=".InActivity" />
-        <activity android:name=".OutActivity" />
+        <activity android:name=".pemasukan.InActivity" />
+        <activity android:name=".pengeluaran.OutActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

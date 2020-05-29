@@ -1,4 +1,4 @@
-package id.yongki.bukukasdigital;
+package id.yongki.bukukasdigital.pengeluaran;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
