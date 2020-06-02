@@ -22,7 +22,7 @@
         android:layout_marginTop="10dp">
 
         <EditText
-            android:id="@+id/et_nama"
+            android:id="@+id/in_et_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="14dp"
@@ -39,7 +39,7 @@
         android:layout_marginTop="10dp">
 
         <EditText
-            android:id="@+id/et_jumlah"
+            android:id="@+id/in_et_jumlah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="14dp"
@@ -63,7 +63,7 @@
             android:layout_weight="1">
 
             <EditText
-                android:id="@+id/et_tanggal"
+                android:id="@+id/in_et_tanggal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
@@ -74,7 +74,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageView
-            android:id="@+id/iv_date"
+            android:id="@+id/in_iv_date"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -88,7 +88,7 @@
         android:layout_weight="1">
 
         <EditText
-            android:id="@+id/et_deskripsi"
+            android:id="@+id/in_et_deskripsi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="14dp"
@@ -100,6 +100,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:id="@+id/in_bt_simpan"
         android:text="simpan"
         android:background="@drawable/buttonstyle_simpan"
         android:textColor="@android:color/white"/>

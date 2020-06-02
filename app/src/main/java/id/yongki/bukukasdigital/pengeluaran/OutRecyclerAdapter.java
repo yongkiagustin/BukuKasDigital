@@ -12,7 +12,7 @@ import java.util.List;
 
 import id.yongki.bukukasdigital.R;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class OutRecyclerAdapter extends RecyclerView.Adapter<OutRecyclerAdapter.MyViewHolder> {
 
     private Context mContext;
     private List<PengeluaranDB> pengeluaranList;
@@ -28,7 +28,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             deskripsi = (TextView)v.findViewById(R.id.tvdeskripsi);
         }
     }
-    public RecyclerAdapter(Context mContext, List<PengeluaranDB> albumList) {
+    public OutRecyclerAdapter(Context mContext, List<PengeluaranDB> albumList) {
         this.mContext = mContext;
         this.pengeluaranList = albumList;
     }
@@ -41,7 +41,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     }
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        //TODO CHART PAKAI INI
         final PengeluaranDB album = pengeluaranList.get(position);
         holder.nama.setText(album.getNama());
         holder.jumlah.setText(album.getJumlah());

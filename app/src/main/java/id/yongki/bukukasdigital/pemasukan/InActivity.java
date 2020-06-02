@@ -24,8 +24,8 @@ public class InActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in);
-        Date = (EditText) findViewById(R.id.et_tanggal);
-        setDate = (ImageView) findViewById(R.id.iv_date);
+        Date = findViewById(R.id.in_et_tanggal);
+        setDate = findViewById(R.id.in_iv_date);
         Date.setEnabled(false);
         Date.setInputType(InputType.TYPE_NULL);
         setDate.setOnClickListener(new View.OnClickListener() {

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pengeluaran.DetailsActivity"></activity>
+        <activity android:name=".pemasukan.InDetailsActivity"></activity>
+        <activity android:name=".pengeluaran.OutDetailsActivity" />
         <activity android:name=".HomeAcitvity" />
         <activity android:name=".pemasukan.InActivity" />
         <activity android:name=".pengeluaran.OutActivity" />

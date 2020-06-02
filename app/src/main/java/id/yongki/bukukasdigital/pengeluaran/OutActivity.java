@@ -99,7 +99,7 @@ public class OutActivity extends AppCompatActivity {
 
             db.CatPengeluaranDao().insertAll(pengeluaran);
 
-            Intent intent = new Intent(OutActivity.this, DetailsActivity.class);
+            Intent intent = new Intent(OutActivity.this, OutDetailsActivity.class);
             startActivity(intent);
 
 

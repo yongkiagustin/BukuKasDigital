@@ -14,15 +14,15 @@ import java.util.List;
 import id.yongki.bukukasdigital.AppDatabase;
 import id.yongki.bukukasdigital.R;
 
-public class DetailsActivity extends AppCompatActivity {
-    RecyclerAdapter recycleAdapter;
+public class OutDetailsActivity extends AppCompatActivity {
+    OutRecyclerAdapter recycleAdapter;
     List<PengeluaranDB> listPengeluaran = new ArrayList<>();
     public static AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
+        setContentView(R.layout.activity_out_details);
 
         fetchDataFromRoom();
         initRecyclerView();
@@ -33,22 +33,15 @@ public class DetailsActivity extends AppCompatActivity {
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class,"pengeluaran").allowMainThreadQueries().build();
         listPengeluaran = db.CatPengeluaranDao().getAll();
-
-        //just checking data from db
-        for (int i = 0 ;i <listPengeluaran.size();i++){
-            Log.e("Aplikasi",listPengeluaran.get(i).getNama()+i);
-            Log.e("Aplikasi",listPengeluaran.get(i).getJumlah()+i);
-            Log.e("Aplikasi",listPengeluaran.get(i).getNama()+i);
-            Log.e("Aplikasi",listPengeluaran.get(i).getTanggal()+i);
         }
-    }
+
     private void initRecyclerView() {
         RecyclerView myRecyclerview = (RecyclerView)findViewById(R.id.myRecyclerview);
         myRecyclerview.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         myRecyclerview.setLayoutManager(llm);
-        recycleAdapter =new RecyclerAdapter(this, listPengeluaran);
+        recycleAdapter =new OutRecyclerAdapter(this, listPengeluaran);
     }
     private void setAdapter() {
         RecyclerView myRecyclerview = (RecyclerView)findViewById(R.id.myRecyclerview);
